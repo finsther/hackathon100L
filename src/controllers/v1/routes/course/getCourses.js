@@ -13,8 +13,6 @@ const getAllCourses = async (_req, res) => {
 
     return res.send(courses);
   } catch (error) {
-    console.log(error);
-
     return res.status(500).json({ code: 'UNEXPECTED_ERROR' });
   }
 };

@@ -1,4 +1,4 @@
-import Course from '../../../../models/Course.js';
+import Course from '../../../../models/Course';
 
 const createCourse = async (req, res) => {
   const {
@@ -7,16 +7,16 @@ const createCourse = async (req, res) => {
     instructor,
     thumbnailUrl,
     title,
-    url
+    url,
   } = req.body;
-  
+
   const newCourse = new Course({
     broadcastDate,
     description,
     instructor,
     thumbnailUrl,
     title,
-    url
+    url,
   });
 
   try {
@@ -24,8 +24,6 @@ const createCourse = async (req, res) => {
 
     res.status(201).send(savedCourse);
   } catch (error) {
-    console.error(error);
-
     res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 };

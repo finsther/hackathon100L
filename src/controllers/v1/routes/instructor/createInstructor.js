@@ -1,4 +1,4 @@
-import Instructor from '../../../../models/Instructor.js';
+import Instructor from '../../../../models/Instructor';
 
 const createInstructor = async (req, res) => {
   const {
@@ -6,7 +6,7 @@ const createInstructor = async (req, res) => {
     lastName,
     name,
     occupation,
-    profilePictureUrl
+    profilePictureUrl,
   } = req.body;
 
   const newInstructor = new Instructor({
@@ -14,7 +14,7 @@ const createInstructor = async (req, res) => {
     lastName,
     name,
     occupation,
-    profilePictureUrl
+    profilePictureUrl,
   });
 
   try {
@@ -22,8 +22,6 @@ const createInstructor = async (req, res) => {
 
     res.status(201).send(savedInstructor);
   } catch (error) {
-    console.error(error);
-
     res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 };

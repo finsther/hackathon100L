@@ -3,22 +3,22 @@ import mongoose from 'mongoose';
 const instructorSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   lastName: {
     type: String,
-    required: true
+    required: true,
   },
   occupation: {
     type: String,
-    required: true
+    required: true,
   },
   profilePictureUrl: {
-    type: String
+    type: String,
   },
   birthdate: {
     type: Date,
-    required: true
+    required: true,
   },
 });
 

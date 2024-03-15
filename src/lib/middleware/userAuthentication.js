@@ -1,8 +1,9 @@
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
-import User from '../../models/User.js';
+import User from '../../models/User';
 
+// eslint-disable-next-line consistent-return
 const userAuthenticationMiddleware = async (req, res, next) => {
   dotenv.config();
 
@@ -24,7 +25,7 @@ const userAuthenticationMiddleware = async (req, res, next) => {
     decodedToken = jwt.verify(token, process.env.SECRET_TOKEN);
   } catch (error) {
     if (error instanceof jwt.TokenExpiredError) {
-        return res.status(401).send({ code: 'EXPIRED_TOKEN' });
+      return res.status(401).send({ code: 'EXPIRED_TOKEN' });
     }
 
     return res.status(401).send({ code: 'INVALID_TOKEN' });

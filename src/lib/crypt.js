@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+import bcrypt from 'bcrypt';
 
 class CryptManager {
   constructor() {
@@ -6,24 +6,16 @@ class CryptManager {
   }
 
   async hashPassword(password) {
-    try {
-      const hashedPassword = await bcrypt.hash(password, this.saltRounds);
+    const hashedPassword = await bcrypt.hash(password, this.saltRounds);
 
-      return hashedPassword;
-    } catch (error) {
-      throw error;
-    }
+    return hashedPassword;
   }
 
   async comparePasswords(password, hashedPassword) {
-    try {
-      const result = await bcrypt.compare(password, hashedPassword);
+    const result = await bcrypt.compare(password, hashedPassword);
 
-      return result;
-    } catch (error) {
-      throw error;
-    }
+    return result;
   }
 }
 
-module.exports = CryptManager;
+export default CryptManager;

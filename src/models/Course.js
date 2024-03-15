@@ -3,45 +3,45 @@ import mongoose from 'mongoose';
 const courseSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   instructor: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Instructor',
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   category: {
     type: String,
-    required: true
+    required: true,
   },
   duration: {
     type: Number,
-    required: true
+    required: true,
   },
   thumbnailUrl: {
     type: String,
-    required: true
+    required: true,
   },
   url: {
     type: String,
-    required: true
+    required: true,
   },
   upvote: {
     type: Number,
-    default: 0
+    default: 0,
   },
   downvote: {
     type: Number,
-    default: 0
+    default: 0,
   },
   publishedDate: {
     type: Date,
     required: true,
-    default: Date.now
+    default: Date.now,
   },
 });
 

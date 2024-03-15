@@ -6,11 +6,13 @@ const connectToDatabase = async () => {
   try {
     await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
 
+    // eslint-disable-next-line no-console
     console.log('Successful connection to MongoDB');
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error connecting to MongoDB:', error);
 
     throw error;

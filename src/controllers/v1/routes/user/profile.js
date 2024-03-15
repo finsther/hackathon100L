@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const userProfile = async (req, res) => {
-  const {_id: userId} = req.user._id;
+  const { _id: userId } = req.user._id;
 
   const User = mongoose.model('User');
 
@@ -19,12 +19,10 @@ const userProfile = async (req, res) => {
         gender: user.gender,
         email: user.email,
         phoneNumber: user.phoneNumber,
-        birthdate: user.birthdate
-      }
+        birthdate: user.birthdate,
+      },
     );
   } catch (error) {
-    console.log(error);
-
     return res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 };

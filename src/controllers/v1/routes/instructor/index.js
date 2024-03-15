@@ -1,19 +1,19 @@
 import express from 'express';
 
 // Controllers
-import getAllInstructors from './getInstructors.js';
-import createInstructor from './createInstructor.js';
+import getAllInstructors from './getInstructors';
+import createInstructor from './createInstructor';
 
 const router = express.Router();
 
 router.get(
   '/',
-  getAllInstructors
+  getAllInstructors,
 );
 
 router.post(
   '/',
-  createInstructor
+  createInstructor,
 );
 
 export default router;

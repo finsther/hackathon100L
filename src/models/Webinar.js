@@ -3,32 +3,32 @@ import mongoose from 'mongoose';
 const webinarSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   instructor: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Instructor',
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   category: {
     type: Number,
-    required: true
+    required: true,
   },
   duration: {
     type: Number,
-    required: true
+    required: true,
   },
   thumbnailUrl: {
     type: String,
-    required: true
+    required: true,
   },
   url: {
     type: String,
-    required: true
+    required: true,
   },
   upvote: {
     type: Number,
@@ -38,10 +38,10 @@ const webinarSchema = new mongoose.Schema({
   },
   broadcastDate: {
     type: Date,
-    required: true
+    required: true,
   },
   publishedDate: {
-    type: Date
+    type: Date,
   },
 });
 

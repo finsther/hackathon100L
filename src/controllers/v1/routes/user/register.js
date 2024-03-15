@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
-import CryptManager from '../../../../lib/crypt.js';
-import User from '../../../../models/User.js';
+import CryptManager from '../../../../lib/crypt';
+import User from '../../../../models/User';
 
 const registerUser = async (req, res) => {
   const {
@@ -11,7 +11,7 @@ const registerUser = async (req, res) => {
     lastName,
     name,
     password,
-    phoneNumber
+    phoneNumber,
   } = req.body;
 
   const crypt = new CryptManager();
@@ -26,8 +26,6 @@ const registerUser = async (req, res) => {
       return res.status(400).send({ code: 'EMAIL_ALREADY_REGISTERED' });
     }
   } catch (error) {
-    console.error(error);
-
     res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 
@@ -38,17 +36,15 @@ const registerUser = async (req, res) => {
     lastName,
     name,
     phoneNumber,
-    password: hashedPassword
+    password: hashedPassword,
   });
 
   try {
     const registeredUser = await newUser.save();
 
-    res.status(201).send(registeredUser);
+    return res.status(201).send(registeredUser);
   } catch (error) {
-    console.error(error);
-
-    res.status(500).send({ code: 'UNEXPECTED_ERROR' });
+    return res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 };
 

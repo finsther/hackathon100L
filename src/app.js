@@ -1,7 +1,7 @@
 import express from 'express';
 
 import apiRoutes from './controllers/v1';
-import connectToDatabase from './database.js'; 
+import connectToDatabase from './database';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,5 +16,6 @@ app.get('/health', (_req, res) => {
 });
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server started on port ${PORT}`);
 });

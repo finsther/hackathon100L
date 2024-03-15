@@ -1,29 +1,29 @@
 import express from 'express';
 
 // Middlewares
-import userAuthentication from '../../../../lib/middleware/userAuthentication.js';
+import userAuthentication from '../../../../lib/middleware/userAuthentication';
 
 // Controllers
-import loginUser from './login.js';
-import registerUser from './register.js';
-import profile from './profile.js';
+import loginUser from './login';
+import registerUser from './register';
+import profile from './profile';
 
 const router = express.Router();
 
 router.get(
   '/profile',
   userAuthentication,
-  profile
+  profile,
 );
 
 router.post(
   '/register',
-  registerUser
+  registerUser,
 );
 
 router.post(
   '/login',
-  loginUser
+  loginUser,
 );
 
 export default router;
