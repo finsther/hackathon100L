@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 import apiRoutes from './controllers/v1';
 import connectToDatabase from './database';
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 connectToDatabase();
 
+app.use(cors());
 app.use(express.json());
 app.use('/api/v1', apiRoutes);
 
