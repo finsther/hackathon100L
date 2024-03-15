@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
-import CryptManager from '../../../lib/crypt.js';
-import User from '../../../models/User.js';
+import CryptManager from '../../../../lib/crypt.js';
+import User from '../../../../models/User.js';
 
 const registerUser = async (req, res) => {
   const {

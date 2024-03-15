@@ -1,12 +1,12 @@
 import express from 'express';
 
 // Middlewares
-import userAuthentication from '../../lib/middleware/userAuthentication.js';
+import userAuthentication from '../../../../lib/middleware/userAuthentication.js';
 
 // Controllers
-import loginUser from '../../controllers/v1/user/login.js';
-import registerUser from '../../controllers/v1/user/register.js';
-import profile from '../../controllers/v1/user/profile.js';
+import loginUser from './login.js';
+import registerUser from './register.js';
+import profile from './profile.js';
 
 const router = express.Router();
 

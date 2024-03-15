@@ -1,7 +1,8 @@
 import express from 'express';
 
-import getAllWebinars from '../../controllers/v1/webinar/getWebinars.js';
-import createWebinar from '../../controllers/v1/webinar/crearWebinar.js';
+// Controllers
+import getAllWebinars from './getWebinars.js';
+import createWebinar from './crearWebinar.js';
 
 const router = express.Router();
 

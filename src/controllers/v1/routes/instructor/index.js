@@ -1,7 +1,8 @@
 import express from 'express';
 
-import getAllInstructors from '../../controllers/v1/instructor/getInstructors.js';
-import createInstructor from '../../controllers/v1/instructor/createInstructor.js';
+// Controllers
+import getAllInstructors from './getInstructors.js';
+import createInstructor from './createInstructor.js';
 
 const router = express.Router();
 

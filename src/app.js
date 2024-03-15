@@ -1,6 +1,6 @@
 import express from 'express';
 
-import apiRoutes from './routes/index.js';
+import apiRoutes from './controllers/v1';
 import connectToDatabase from './database.js'; 
 
 const app = express();

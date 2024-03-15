@@ -1,10 +1,10 @@
 
 import express from 'express';
 
-import courseRoutes from './course/courseRoutes.js';
-import instructorsRoutes from './instructor/instructorRoutes.js';
-import userRoutes from './user/userRoutes.js';
-import webinarRoutes from './webinar/webinarRoutes.js';
+import courseRoutes from './routes/course';
+import instructorsRoutes from './routes/instructor';
+import userRoutes from './routes/user';
+import webinarRoutes from './routes/webinar';
 
 const router = express.Router();
 

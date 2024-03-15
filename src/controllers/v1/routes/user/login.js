@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
-import CryptManager from '../../../lib/crypt.js';
-import User from '../../../models/User.js';
+import CryptManager from '../../../../lib/crypt.js';
+import User from '../../../../models/User.js';
 
 const loginUser = async (req, res) => {
   dotenv.config();
