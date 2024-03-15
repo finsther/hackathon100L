@@ -1,7 +1,7 @@
 import express from 'express';
 
-import getAllCourses from '../../controllers/course/getCourses.js';
-import createCourse from '../../controllers/course/createCourse.js';
+import getAllCourses from '../../controllers/v1/course/getCourses';
+import createCourse from '../../controllers/v1/course/createCourse.js';
 
 const router = express.Router();
 

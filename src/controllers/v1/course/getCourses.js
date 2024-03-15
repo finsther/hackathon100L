@@ -8,14 +8,14 @@ const getAllCourses = async (_req, res) => {
     const courses = await Course.find();
 
     if (_.isEmpty(courses)) {
-      return res.status(200).json([]);
+      return res.status(200).send([]);
     }
 
-    return res.json(courses);
+    return res.send(courses);
   } catch (error) {
     console.log(error);
 
-    return res.status(500).json({ message: 'Server error' });
+    return res.status(500).json({ code: 'UNEXPECTED_ERROR' });
   }
 };
 

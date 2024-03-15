@@ -1,7 +1,7 @@
-import CryptManager from '../../lib/crypt.js';
 import mongoose from 'mongoose';
 
-import User from '../../models/User.js';
+import CryptManager from '../../../lib/crypt.js';
+import User from '../../../models/User.js';
 
 const registerUser = async (req, res) => {
   const {
@@ -23,12 +23,12 @@ const registerUser = async (req, res) => {
     const existingUser = await userModel.findOne({ email });
 
     if (existingUser) {
-      return res.status(400).json({ message: 'Another user with this email already exist' });
+      return res.status(400).send({ code: 'EMAIL_ALREADY_REGISTERED' });
     }
   } catch (error) {
     console.error(error);
 
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 
   const newUser = new User({
@@ -44,11 +44,11 @@ const registerUser = async (req, res) => {
   try {
     const registeredUser = await newUser.save();
 
-    res.status(201).json(registeredUser);
+    res.status(201).send(registeredUser);
   } catch (error) {
     console.error(error);
 
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 };
 

@@ -8,14 +8,14 @@ const getAllWebinars = async (_req, res) => {
     const webinars = await Webinar.find();
 
     if (_.isEmpty(webinars)) {
-      return res.status(200).json([]);
+      return res.status(200).send([]);
     }
 
-    return res.json(webinars);
+    return res.send(webinars);
   } catch (error) {
     console.log(error);
 
-    return res.status(500).json({ message: 'Server error' });
+    return res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 };
 

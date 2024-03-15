@@ -1,40 +1,32 @@
-import Course from '../../models/Course.js';
+import Course from '../../../models/Course.js';
 
 const createCourse = async (req, res) => {
   const {
-    author,
-    category,
+    broadcastDate,
     description,
-    downvote,
-    duration,
-    publishedDate,
+    instructor,
     thumbnailUrl,
     title,
-    upvote,
     url
   } = req.body;
-
+  
   const newCourse = new Course({
-    author,
-    category,
+    broadcastDate,
     description,
-    downvote,
-    duration,
-    publishedDate,
+    instructor,
     thumbnailUrl,
     title,
-    upvote,
     url
   });
 
   try {
     const savedCourse = await newCourse.save();
 
-    res.status(201).json(savedCourse);
+    res.status(201).send(savedCourse);
   } catch (error) {
     console.error(error);
 
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).send({ code: 'UNEXPECTED_ERROR' });
   }
 };
 
